@@ -1,0 +1,11 @@
+<h1>Simple AirBnB <%= link_to "Add Flat", new_flat_path %></h1>
+<h1>ALL AVAILABLE FLATS</h1>
+<% @flats.each do |flat| %>
+  <h1><%= flat.name %></h1>
+  <h2><%= flat.address %></h2>
+  <h2><%= flat.number_of_guests %> <%= flat.price_per_night %></h2>
+  <%= link_to "More Info", flat_path(flat) %>
+  <%= link_to "Update a flat", edit_flat_path(flat)  %>
+  <%= link_to "Delete this flat", flat_path(flat), method: :delete %>
+
+<% end %>
